@@ -1,6 +1,7 @@
 package com.example.studysmartapp.data.local.entity
 
-import android.graphics.Color
+
+import androidx.compose.ui.graphics.Color
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.example.studysmartapp.ui.theme.*
@@ -9,7 +10,7 @@ import com.example.studysmartapp.ui.theme.*
 data class Subject(
     val name: String,
     val goalHours: Float,
-    val colors: List<Color>,
+    val colors: List<Int>,
     @PrimaryKey(autoGenerate = true)
     val subjectId: Int? = null
 ) {
