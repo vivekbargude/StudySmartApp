@@ -95,33 +95,33 @@ class DashboardViewModel @Inject constructor(
             }
 
             DashBoardEvent.SaveSubject -> saveSubject()
-            DashBoardEvent.DeleteSession -> {}
+            DashBoardEvent.DeleteSession -> deleteSession()
             is DashBoardEvent.OnTaskIsCompleteChange -> {
-               // updateTask(event.task)
+                updateTask(event.task)
             }
         }
     }
 
-//    private fun updateTask(task: Task) {
-//        viewModelScope.launch {
-//            try {
-//                taskRepository.upsertTask(
-//                    task = task.copy(isComplete = !task.isComplete)
-//                )
-//                _snackbarEventFlow.emit(
-//                    SnackbarEvent.ShowSnackbar(message = "Saved in completed tasks.")
-//                )
-//            } catch (e: Exception) {
-//                _snackbarEventFlow.emit(
-//                    SnackbarEvent.ShowSnackbar(
-//                        "Couldn't update task. ${e.message}",
-//                        SnackbarDuration.Long
-//                    )
-//                )
-//            }
-//        }
-//    }
-//
+    private fun updateTask(task: Task) {
+        viewModelScope.launch {
+            try {
+                taskRepository.upsertTask(
+                    task = task.copy(isComplete = !task.isComplete)
+                )
+                _snackbarEventFlow.emit(
+                    SnackbarEvent.ShowSnackbar(message = "Saved in completed tasks.")
+                )
+            } catch (e: Exception) {
+                _snackbarEventFlow.emit(
+                    SnackbarEvent.ShowSnackbar(
+                        "Couldn't update task. ${e.message}",
+                        SnackbarDuration.Long
+                    )
+                )
+            }
+        }
+    }
+
     private fun saveSubject() {
         viewModelScope.launch {
             try {
@@ -146,6 +146,26 @@ class DashboardViewModel @Inject constructor(
                 _snackbarEventFlow.emit(
                     SnackbarEvent.ShowSnackbar(
                         message = "Couldn't save subject. ${e.message}",
+                        duration = SnackbarDuration.Long
+                    )
+                )
+            }
+        }
+    }
+
+    private fun deleteSession() {
+        viewModelScope.launch {
+            try {
+                state.value.session?.let {
+                    sessionRepository.deleteSession(it)
+                    _snackbarEventFlow.emit(
+                        SnackbarEvent.ShowSnackbar(message = "Session deleted successfully")
+                    )
+                }
+            } catch (e: Exception) {
+                _snackbarEventFlow.emit(
+                    SnackbarEvent.ShowSnackbar(
+                        message = "Couldn't delete session. ${e.message}",
                         duration = SnackbarDuration.Long
                     )
                 )

@@ -1,5 +1,6 @@
 package com.example.studysmartapp.presentation.components
 
+import Priority
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -24,9 +25,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import changeMillisToDateString
 import com.example.studysmartapp.R
 import com.example.studysmartapp.data.local.entity.Task
-
 
 fun LazyListScope.tasksList(
     sectionTitle: String,
@@ -107,7 +108,7 @@ private fun TaskCard(
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    text = "${task.dueDate}",
+                    text = task.dueDate.changeMillisToDateString(),
                     style = MaterialTheme.typography.bodySmall
                 )
             }

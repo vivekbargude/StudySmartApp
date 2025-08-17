@@ -25,8 +25,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import changeMillisToDateString
 import com.example.studysmartapp.R
 import com.example.studysmartapp.data.local.entity.Session
+import toHours
 
 fun LazyListScope.studySessionsList(
     sectionTitle: String,
@@ -94,13 +96,13 @@ private fun StudySessionCard(
                     style = MaterialTheme.typography.titleMedium
                 )
                 Text(
-                    text = "${session.date}",
+                    text = session.date.changeMillisToDateString(),
                     style = MaterialTheme.typography.bodySmall
                 )
             }
             Spacer(modifier = Modifier.weight(1f))
             Text(
-                text = "${session.duration} hr",
+                text = "${session.duration.toHours()} hr",
                 style = MaterialTheme.typography.titleMedium
             )
             IconButton(onClick = onDeleteIconClick) {

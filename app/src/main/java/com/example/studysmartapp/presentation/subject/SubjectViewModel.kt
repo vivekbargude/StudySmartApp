@@ -92,7 +92,7 @@ class SubjectViewModel @Inject constructor(
 
             SubjectEvent.UpdateSubject -> updateSubject()
             SubjectEvent.DeleteSubject -> deleteSubject()
-            SubjectEvent.DeleteSession -> {}
+            SubjectEvent.DeleteSession -> deleteSession()
 
             SubjectEvent.UpdateProgress -> {
                 val goalStudyHours = state.value.goalStudyHours.toFloatOrNull() ?: 1f
@@ -101,6 +101,26 @@ class SubjectViewModel @Inject constructor(
                         progress = (state.value.studiedHours / goalStudyHours).coerceIn(0f, 1f)
                     )
                 }
+            }
+        }
+    }
+
+    private fun deleteSession() {
+        viewModelScope.launch {
+            try {
+                state.value.session?.let {
+                    sessionRepository.deleteSession(it)
+                    _snackbarEventFlow.emit(
+                        SnackbarEvent.ShowSnackbar(message = "Session deleted successfully")
+                    )
+                }
+            } catch (e: Exception) {
+                _snackbarEventFlow.emit(
+                    SnackbarEvent.ShowSnackbar(
+                        message = "Couldn't delete session. ${e.message}",
+                        duration = SnackbarDuration.Long
+                    )
+                )
             }
         }
     }

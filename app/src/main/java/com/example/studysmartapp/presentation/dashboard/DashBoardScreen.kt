@@ -59,11 +59,13 @@ import com.example.studysmartapp.presentation.destinations.TaskScreenRouteDestin
 import com.example.studysmartapp.presentation.subject.SubjectScreenNavArgs
 import com.example.studysmartapp.presentation.task.TaskScreenNavArgs
 import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.annotation.RootNavGraph
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.collectLatest
 
-@Destination(start = true)
+@RootNavGraph(start = true)
+@Destination()
 @Composable
 fun DashboardScreenRoute(
     navigator: DestinationsNavigator
@@ -213,7 +215,7 @@ private fun DashboardScreen(
                         "Start a study session to begin recording your progress.",
                 sessions = sessions,
                 onDeleteIconClick = {
-                    onEvent(DashBoardEvent.DeleteSession)
+                    onEvent(DashBoardEvent.OnDeleteSessionButtonClick(it))
                     isDeleteSessionDialogOpen = true
                 }
             )

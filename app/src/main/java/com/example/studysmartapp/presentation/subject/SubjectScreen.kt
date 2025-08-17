@@ -1,7 +1,6 @@
 package com.example.studysmartapp.presentation.subject
 
 import SnackbarEvent
-import com.example.studysmartapp.data.local.entity.Subject
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -42,7 +41,6 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.text.style.TextOverflow
@@ -56,8 +54,6 @@ import com.example.studysmartapp.presentation.components.studySessionsList
 import com.example.studysmartapp.presentation.components.tasksList
 import com.example.studysmartapp.presentation.destinations.TaskScreenRouteDestination
 import com.example.studysmartapp.presentation.task.TaskScreenNavArgs
-import com.example.studysmartapp.sessions
-import com.example.studysmartapp.tasks
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import kotlinx.coroutines.flow.SharedFlow
@@ -81,7 +77,7 @@ fun SubjectScreenRoute(
         snackbarEvent = viewModel.snackbarEventFlow,
         onBackButtonClick = { navigator.navigateUp() },
         onAddTaskButtonClick = {
-            val navArg = TaskScreenNavArgs(taskId = null, subjectId = -1)
+            val navArg = TaskScreenNavArgs(taskId = null, subjectId = state.currentSubjectId)
             navigator.navigate(TaskScreenRouteDestination(navArgs = navArg))
         },
         onTaskCardClick = { taskId ->
@@ -316,7 +312,7 @@ private fun SubjectOverviewSection(
         Spacer(modifier = Modifier.width(10.dp))
         CountCard(
             modifier = Modifier.weight(1f),
-            headingText = "Study Hours",
+            headingText = "Studied Hours",
             count = studiedHours
         )
         Spacer(modifier = Modifier.width(10.dp))
