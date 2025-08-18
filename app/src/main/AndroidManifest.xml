@@ -30,7 +30,7 @@
         </activity>
 
         <service
-            android:name=".presentation.session.StudySessionTimerService"
+            android:name=".presentation.session.service.StudySessionTimerService"
             android:exported="false"
             android:foregroundServiceType="dataSync"/>
     </application>

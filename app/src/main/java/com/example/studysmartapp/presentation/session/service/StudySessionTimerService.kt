@@ -1,4 +1,4 @@
-package com.example.studysmartapp.presentation.session
+package com.example.studysmartapp.presentation.session.service
 
 import android.annotation.SuppressLint
 import android.app.NotificationChannel

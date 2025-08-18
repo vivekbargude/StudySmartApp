@@ -1,4 +1,4 @@
-package com.example.studysmartapp.presentation.task
+package com.example.studysmartapp.presentation.task.viewmodel
 
 import Priority
 import SnackbarEvent
@@ -10,6 +10,9 @@ import com.example.studysmartapp.data.local.entity.Task
 import com.example.studysmartapp.domain.repository.SubjectRepository
 import com.example.studysmartapp.domain.repository.TaskRepository
 import com.example.studysmartapp.presentation.navArgs
+import com.example.studysmartapp.presentation.task.screen.TaskScreenNavArgs
+import com.example.studysmartapp.presentation.task.states_events.TaskEvent
+import com.example.studysmartapp.presentation.task.states_events.TaskState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow

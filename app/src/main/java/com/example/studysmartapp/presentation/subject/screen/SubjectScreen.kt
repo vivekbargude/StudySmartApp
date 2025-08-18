@@ -1,4 +1,4 @@
-package com.example.studysmartapp.presentation.subject
+package com.example.studysmartapp.presentation.subject.screen
 
 import SnackbarEvent
 import androidx.compose.foundation.layout.Arrangement
@@ -53,7 +53,10 @@ import com.example.studysmartapp.presentation.components.DeleteDialog
 import com.example.studysmartapp.presentation.components.studySessionsList
 import com.example.studysmartapp.presentation.components.tasksList
 import com.example.studysmartapp.presentation.destinations.TaskScreenRouteDestination
-import com.example.studysmartapp.presentation.task.TaskScreenNavArgs
+import com.example.studysmartapp.presentation.subject.viewmodel.SubjectViewModel
+import com.example.studysmartapp.presentation.subject.states_events.SubjectEvent
+import com.example.studysmartapp.presentation.subject.states_events.SubjectState
+import com.example.studysmartapp.presentation.task.screen.TaskScreenNavArgs
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import kotlinx.coroutines.flow.SharedFlow

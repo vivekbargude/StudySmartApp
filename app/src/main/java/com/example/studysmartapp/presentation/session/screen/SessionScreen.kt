@@ -1,4 +1,4 @@
-package com.example.studysmartapp.presentation.session
+package com.example.studysmartapp.presentation.session.screen
 
 import SnackbarEvent
 import android.content.Intent
@@ -56,6 +56,12 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.studysmartapp.presentation.components.DeleteDialog
 import com.example.studysmartapp.presentation.components.SubjectListBottomSheet
 import com.example.studysmartapp.presentation.components.studySessionsList
+import com.example.studysmartapp.presentation.session.service.ServiceHelper
+import com.example.studysmartapp.presentation.session.service.StudySessionTimerService
+import com.example.studysmartapp.presentation.session.service.TimerState
+import com.example.studysmartapp.presentation.session.states_events.SessionEvent
+import com.example.studysmartapp.presentation.session.states_events.SessionState
+import com.example.studysmartapp.presentation.session.viewmodel.SessionViewModel
 import com.example.studysmartapp.presentation.utils.Constants.ACTION_SERVICE_CANCEL
 import com.example.studysmartapp.presentation.utils.Constants.ACTION_SERVICE_START
 import com.example.studysmartapp.presentation.utils.Constants.ACTION_SERVICE_STOP

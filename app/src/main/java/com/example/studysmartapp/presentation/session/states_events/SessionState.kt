@@ -1,4 +1,4 @@
-package com.example.studysmartapp.presentation.session
+package com.example.studysmartapp.presentation.session.states_events
 
 import com.example.studysmartapp.data.local.entity.Session
 import com.example.studysmartapp.data.local.entity.Subject

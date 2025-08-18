@@ -1,4 +1,4 @@
-package com.example.studysmartapp.presentation.dashboard
+package com.example.studysmartapp.presentation.dashboard.states_events
 
 import androidx.compose.ui.graphics.Color
 import com.example.studysmartapp.data.local.entity.Session

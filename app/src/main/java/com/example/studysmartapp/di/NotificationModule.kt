@@ -5,7 +5,7 @@ import android.app.NotificationManager
 import android.content.Context
 import androidx.core.app.NotificationCompat
 import com.example.studysmartapp.R
-import com.example.studysmartapp.presentation.session.ServiceHelper
+import com.example.studysmartapp.presentation.session.service.ServiceHelper
 import com.example.studysmartapp.presentation.utils.Constants.NOTIFICATION_CHANNEL_ID
 import dagger.Module
 import dagger.Provides

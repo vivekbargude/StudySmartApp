@@ -1,4 +1,4 @@
-package com.example.studysmartapp.presentation.task
+package com.example.studysmartapp.presentation.task.states_events
 
 import Priority
 import com.example.studysmartapp.data.local.entity.Subject

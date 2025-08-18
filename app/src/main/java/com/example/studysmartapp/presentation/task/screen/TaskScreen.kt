@@ -1,4 +1,4 @@
-package com.example.studysmartapp.presentation.task
+package com.example.studysmartapp.presentation.task.screen
 
 import Priority
 import SnackbarEvent
@@ -54,6 +54,9 @@ import com.example.studysmartapp.presentation.components.DeleteDialog
 import com.example.studysmartapp.presentation.components.SubjectListBottomSheet
 import com.example.studysmartapp.presentation.components.TaskCheckBox
 import com.example.studysmartapp.presentation.components.TaskDatePicker
+import com.example.studysmartapp.presentation.task.viewmodel.TaskViewModel
+import com.example.studysmartapp.presentation.task.states_events.TaskEvent
+import com.example.studysmartapp.presentation.task.states_events.TaskState
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import kotlinx.coroutines.flow.SharedFlow

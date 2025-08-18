@@ -1,4 +1,4 @@
-package com.example.studysmartapp.presentation.subject
+package com.example.studysmartapp.presentation.subject.viewmodel
 
 
 import SnackbarEvent
@@ -14,6 +14,9 @@ import com.example.studysmartapp.domain.repository.SessionRepository
 import com.example.studysmartapp.domain.repository.SubjectRepository
 import com.example.studysmartapp.domain.repository.TaskRepository
 import com.example.studysmartapp.presentation.navArgs
+import com.example.studysmartapp.presentation.subject.screen.SubjectScreenNavArgs
+import com.example.studysmartapp.presentation.subject.states_events.SubjectEvent
+import com.example.studysmartapp.presentation.subject.states_events.SubjectState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow

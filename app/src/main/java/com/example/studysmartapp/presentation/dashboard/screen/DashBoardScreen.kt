@@ -1,4 +1,4 @@
-package com.example.studysmartapp.presentation.dashboard
+package com.example.studysmartapp.presentation.dashboard.screen
 
 import SnackbarEvent
 import androidx.compose.foundation.Image
@@ -53,11 +53,14 @@ import com.example.studysmartapp.presentation.components.DeleteDialog
 import com.example.studysmartapp.presentation.components.SubjectCard
 import com.example.studysmartapp.presentation.components.studySessionsList
 import com.example.studysmartapp.presentation.components.tasksList
+import com.example.studysmartapp.presentation.dashboard.states_events.DashBoardEvent
+import com.example.studysmartapp.presentation.dashboard.states_events.DashboardState
+import com.example.studysmartapp.presentation.dashboard.viewmodel.DashboardViewModel
 import com.example.studysmartapp.presentation.destinations.SessionScreenRouteDestination
 import com.example.studysmartapp.presentation.destinations.SubjectScreenRouteDestination
 import com.example.studysmartapp.presentation.destinations.TaskScreenRouteDestination
-import com.example.studysmartapp.presentation.subject.SubjectScreenNavArgs
-import com.example.studysmartapp.presentation.task.TaskScreenNavArgs
+import com.example.studysmartapp.presentation.subject.screen.SubjectScreenNavArgs
+import com.example.studysmartapp.presentation.task.screen.TaskScreenNavArgs
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.annotation.RootNavGraph
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator

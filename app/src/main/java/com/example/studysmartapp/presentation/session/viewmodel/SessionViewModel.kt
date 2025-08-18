@@ -1,4 +1,4 @@
-package com.example.studysmartapp.presentation.session
+package com.example.studysmartapp.presentation.session.viewmodel
 
 import SnackbarEvent
 import androidx.compose.material3.SnackbarDuration
@@ -7,6 +7,8 @@ import androidx.lifecycle.viewModelScope
 import com.example.studysmartapp.data.local.entity.Session
 import com.example.studysmartapp.domain.repository.SessionRepository
 import com.example.studysmartapp.domain.repository.SubjectRepository
+import com.example.studysmartapp.presentation.session.states_events.SessionEvent
+import com.example.studysmartapp.presentation.session.states_events.SessionState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow

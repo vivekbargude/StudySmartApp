@@ -14,7 +14,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.core.app.ActivityCompat
 import com.example.studysmartapp.presentation.destinations.SessionScreenRouteDestination
-import com.example.studysmartapp.presentation.session.StudySessionTimerService
+import com.example.studysmartapp.presentation.session.service.StudySessionTimerService
 import com.example.studysmartapp.ui.theme.StudySmartAppTheme
 import com.ramcosta.composedestinations.DestinationsNavHost
 import com.ramcosta.composedestinations.navigation.dependency
