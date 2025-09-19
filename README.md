@@ -55,8 +55,6 @@
 | --------------------------------------- | --------------------------------------------- | ----------------------------------------------- | ----------------------------------------- |
 | ![Home Dark](screenshots/dark/home.png) | ![Subject Dark](screenshots/dark/subject.png) | ![Add Task Dark](screenshots/dark/add_task.png) | ![Timer Dark](screenshots/dark/timer.png) |
 
-*(Place your screenshots in `/screenshots/light/` and `/screenshots/dark/` folders and update file names accordingly.)*
-
 ---
 
 ## 🚀 Getting Started
