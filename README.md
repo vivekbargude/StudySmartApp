@@ -29,20 +29,33 @@
 * 📊 **Progress Monitoring**
 
   * Track recent study sessions per subject.
-  * Visualize study progress with a **percentage progress bar** showing completed vs. assigned hours.
-  * Get insights on time spent on each subject.
+  * Visualize study progress with a **percentage circle** showing completed vs. assigned hours.
 
 * 📶 **Offline-First Approach**
 
   * Works seamlessly offline, ensuring study tracking without internet dependency.
 
+* 🌗 **Dark & Light Mode Support**
+
+  * Beautiful UI that adapts to your system theme automatically.
+
 ---
 
 ## 📸 Screenshots
 
-| Home Screen                   | Subject Details                     | Study Session Timer             | Progress Tracking                     |
-| ----------------------------- | ----------------------------------- | ------------------------------- | ------------------------------------- |
-| ![Home](screenshots/home.png) | ![Subject](screenshots/subject.png) | ![Timer](screenshots/timer.png) | ![Progress](screenshots/progress.png) |
+### 🔆 Light Mode
+
+| Home Screen                               | Subject Details                                 | Add Task Screen                                   | Study Session Timer                         |
+| ----------------------------------------- | ----------------------------------------------- | ------------------------------------------------- | ------------------------------------------- |
+| ![Home Light](screenshots/light/home.png) | ![Subject Light](screenshots/light/subject.png) | ![Add Task Light](screenshots/light/add_task.png) | ![Timer Light](screenshots/light/timer.png) |
+
+### 🌙 Dark Mode
+
+| Home Screen                             | Subject Details                               | Add Task Screen                                 | Study Session Timer                       |
+| --------------------------------------- | --------------------------------------------- | ----------------------------------------------- | ----------------------------------------- |
+| ![Home Dark](screenshots/dark/home.png) | ![Subject Dark](screenshots/dark/subject.png) | ![Add Task Dark](screenshots/dark/add_task.png) | ![Timer Dark](screenshots/dark/timer.png) |
+
+*(Place your screenshots in `/screenshots/light/` and `/screenshots/dark/` folders and update file names accordingly.)*
 
 ---
 
@@ -75,26 +88,35 @@
 
 ```
 StudySmartApp/
-├── app/                     # Main Android app module
-│   ├── data/                # Local database & repositories
-│   ├── ui/                  # UI screens & components
-│   ├── viewmodel/           # ViewModels for state management
-│   └── utils/               # Helpers & utility classes
-├── gradle/                  # Gradle wrapper files
-├── build.gradle.kts         # Project-level build config
-├── settings.gradle.kts      # Modules included
-└── README.md                # Project documentation
+├── data/                  # Local database, models, repositories
+│   └── ...                # Handles persistence and data sources
+├── di/                    # Dependency injection setup
+├── domain/                
+│   └── repository/        # Domain logic & repository interfaces
+├── presentation/          # UI logic (ViewModels, state management)
+├── ui/                    
+│   └── theme/             # App theming (light & dark mode)
+├── StudySmartApp.kt       # Application class (entry point)
+└── build.gradle.kts       # Gradle configuration
 ```
+
+This structure follows **Clean Architecture principles**:
+
+* **Data layer** → responsible for storage and APIs.
+* **Domain layer** → business logic, repositories, and use cases.
+* **Presentation layer** → ViewModels and UI logic.
+* **UI layer** → Compose/Material Design screens and theming.
 
 ---
 
 ## 🛠️ Technologies Used
 
 * **Kotlin** – App logic and UI
-* **Room Database / SQLite** – Offline-first local storage
+* **Room Database** – Offline-first local storage
 * **Android Jetpack Components** – ViewModel, LiveData, Navigation
-* **WorkManager / Services** – Background timers & notifications
-* **Material Design** – UI/UX
+* **Foreground Service** – Background timers & notifications
+* **Material Design** – UI/UX with Light & Dark mode
+* **Dependency Injection (Hilt)** – For modular design 
 
 ---
 
@@ -108,6 +130,3 @@ Contributions are welcome!
 4. Open a Pull Request
 
 ---
-
-
-👉 Would you like me to also create a **visual architecture diagram** (showing how `Subjects → Tasks → Sessions → Progress` are linked) for this README? That would make it even more professional.
